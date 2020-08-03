@@ -25,8 +25,6 @@ function playingMessFn() {
         if (i !== 2) {
             control.children[i].addEventListener('mouseenter', enter);
             control.children[i].addEventListener('mouseleave', leave);
-            // control.children[i].addEventListener('mousedown', down);
-            // control.children[i].addEventListener('mouseup', up);
         } else if (i === 2) {
             control.children[i].onclick = function (e) {
                 control.children[i].classList.toggle('icon-zanting');
@@ -90,31 +88,18 @@ function playingMessFn() {
     }
     progress.parentElement.addEventListener('mousedown', e => {
         audio.currentTime = audio.duration * ((e.pageX - actualLeft) / 976);
-        control.children[2].classList.add('icon-zanting');
-        control.children[2].classList.remove('icon-zanting11');
-        if (audio.pause || audio.ended) {
-            ifProgressNull();
-        }
+        if (audio.paused)
+            control.children[2].click();
     });
 
 
     let progressListener = null;
     control.children[1].addEventListener('click', e => {
-        floatRightIconBox[parseInt(audio.dataset.index)].children[0].classList.add('icon-zanting2');
-        floatRightIconBox[parseInt(audio.dataset.index)].children[0].classList.remove('icon-zanting1');
-        floatRightLis[parseInt(audio.dataset.index)].children[0].classList.toggle('active');
-        floatRightLis[parseInt(audio.dataset.index)].children[1].classList.toggle('active');
-        floatRightLis[parseInt(audio.dataset.index)].children[2].style.display = "none";
+        floatRightChange1();
         if (audio.dataset.index === '0')
             audio.dataset.index = musicList.size - 1;
         else audio.dataset.index--;
-        if (!audio.paused) {
-            floatRightIconBox[parseInt(audio.dataset.index)].children[0].classList.remove('icon-zanting2');
-            floatRightIconBox[parseInt(audio.dataset.index)].children[0].classList.add('icon-zanting1');
-        }
-        floatRightLis[parseInt(audio.dataset.index)].children[0].classList.toggle('active');
-        floatRightLis[parseInt(audio.dataset.index)].children[1].classList.toggle('active');
-        floatRightLis[parseInt(audio.dataset.index)].children[2].style.display = "flex";
+        floatRightChange2();
         let curMusic = musicList.get(parseInt(audio.dataset.index));
         let curMusicInfo = curMusic.info.split('-');
         aboutMusic.children[0].children[0].innerText = curMusicInfo[0];
@@ -180,21 +165,11 @@ function playingMessFn() {
 
 
     function nextMusic(e) {
-        floatRightIconBox[parseInt(audio.dataset.index)].children[0].classList.add('icon-zanting2');
-        floatRightIconBox[parseInt(audio.dataset.index)].children[0].classList.remove('icon-zanting1');
-        floatRightLis[parseInt(audio.dataset.index)].children[0].classList.toggle('active');
-        floatRightLis[parseInt(audio.dataset.index)].children[1].classList.toggle('active');
-        floatRightLis[parseInt(audio.dataset.index)].children[2].style.display = "none";
+        floatRightChange1();
         if (audio.dataset.index == musicList.size - 1)
             audio.dataset.index = 0;
         else audio.dataset.index++;
-        if (!audio.paused) {
-            floatRightIconBox[parseInt(audio.dataset.index)].children[0].classList.remove('icon-zanting2');
-            floatRightIconBox[parseInt(audio.dataset.index)].children[0].classList.add('icon-zanting1');
-        }
-        floatRightLis[parseInt(audio.dataset.index)].children[0].classList.toggle('active');
-        floatRightLis[parseInt(audio.dataset.index)].children[1].classList.toggle('active');
-        floatRightLis[parseInt(audio.dataset.index)].children[2].style.display = "flex";
+        floatRightChange2();
         let curMusic = musicList.get(parseInt(audio.dataset.index));
         let curMusicInfo = curMusic.info.split('-');
         aboutMusic.children[0].children[0].innerText = curMusicInfo[0];
@@ -209,15 +184,18 @@ function playingMessFn() {
             progress.value = 0;
         }
     }
-
     function ifProgressNull() {
-        // audio.play();
-        // if (progressListener === null) {
         progressListener = setInterval(() => {
             if (audio.currentTime === audio.duration) {
+                floatRightChange1();
                 if (audio.dataset.index == musicList.size - 1)
                     audio.dataset.index = 0;
                 else audio.dataset.index++;
+                floatRightIconBox[parseInt(audio.dataset.index)].children[0].classList.remove('icon-zanting2');
+                floatRightIconBox[parseInt(audio.dataset.index)].children[0].classList.add('icon-zanting1');
+                floatRightLis[parseInt(audio.dataset.index)].children[0].classList.add('active');
+                floatRightLis[parseInt(audio.dataset.index)].children[1].classList.add('active');
+                floatRightLis[parseInt(audio.dataset.index)].children[2].style.display = "flex";
                 let curMusic = musicList.get(parseInt(audio.dataset.index));
                 let curMusicInfo = curMusic.info.split('-');
                 aboutMusic.children[0].children[0].innerText = curMusicInfo[0];
@@ -241,17 +219,22 @@ function playingMessFn() {
         e.target.style.color = "rgb(209, 209, 209)";
     }
 
-    function down(e) {
-        e.target.style.position = "relative";
-        e.target.style.top = "1px";
-        e.target.style.left = "1px";
+    function floatRightChange1() {
+        floatRightIconBox[parseInt(audio.dataset.index)].children[0].classList.add('icon-zanting2');
+        floatRightIconBox[parseInt(audio.dataset.index)].children[0].classList.remove('icon-zanting1');
+        floatRightLis[parseInt(audio.dataset.index)].children[0].classList.remove('active');
+        floatRightLis[parseInt(audio.dataset.index)].children[1].classList.remove('active');
+        floatRightLis[parseInt(audio.dataset.index)].children[2].style.display = "none";
     }
 
-    function up(e) {
-        console.log(this)
-        e.target.style.position = "static";
-        e.target.style.top = "0";
-        e.target.style.left = "0";
+    function floatRightChange2() {
+        if (!audio.paused) {
+            floatRightIconBox[parseInt(audio.dataset.index)].children[0].classList.remove('icon-zanting2');
+            floatRightIconBox[parseInt(audio.dataset.index)].children[0].classList.add('icon-zanting1');
+        }
+        floatRightLis[parseInt(audio.dataset.index)].children[0].classList.toggle('active');
+        floatRightLis[parseInt(audio.dataset.index)].children[1].classList.toggle('active');
+        floatRightLis[parseInt(audio.dataset.index)].children[2].style.display = "flex";
     }
 }
 
