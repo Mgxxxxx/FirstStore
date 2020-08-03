@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/nav-left.css">
+    <link rel="stylesheet" href="./css/meun-top.css">
+    <link rel="stylesheet" href="./css/playing-mess.css">
+    <link rel="stylesheet" href="./css/float-right.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1968041_jmfnb54f3ba.css">
+
+</head>
+
+<body>
+    <div class="player">
+        <nav class="nav-left">
+            <div class="logo">
+                <img src="./img/logo.png" alt="Logo">
+            </div>
+            <div class="nav-left-body">
+                <ul class="online-music nav-sub-item">
+                    <li class="nav-sub-head"><span>在线音乐</span></li>
+                    <li><i class="iconfont icon-yinyue"></i>音乐馆</li>
+                    <li><i class="iconfont icon-video"></i>视频</li>
+                    <li><i class="iconfont icon-diantai1"></i>电台</li>
+                </ul>
+                <ul class="my-music nav-sub-item">
+                    <li class="nav-sub-head"><span>我的音乐</span></li>
+                    <li><i class="iconfont icon-aixin"></i>我喜欢</li>
+                    <li><i class="iconfont icon-diannao"></i>本地和下载</li>
+                    <li><i class="iconfont icon-clock"></i>播放历史</li>
+                    <li><i class="iconfont icon-yinleliebiao-"></i>试听列表</li>
+                </ul>
+                <ul class="created-list nav-sub-item" data-show="true">
+                    <li class="nav-sub-head">
+                        <span>创建的歌单</span>
+                        <span>
+                            <i class="iconfont icon-jiahao"></i>
+                            <i class="iconfont icon-icon_arrow_top"></i>
+                        </span>
+                    </li>
+                </ul>
+                <ul class="collected-list nav-sub-item" data-show="true">
+                    <li class="nav-sub-head">
+                        <span>收藏的歌单</span>
+                        <i class="iconfont icon-icon_arrow_top"></i>
+                    </li>
+                </ul>
+            </div>
+            <div class="scroll-bar-area">
+                <div class="scroll-bar"></div>
+            </div>
+        </nav>
+        <div class=" meun-top">
+            <div class="search-tool">
+                <div class="go-or-back">
+                    <i class="iconfont icon-jiantouzuo"></i>
+                    <i class="iconfont icon-jiantouyou"></i>
+                </div>
+                <div class="search-music">
+                    <input type="text" placeholder="搜索音乐">
+                    <i class="iconfont icon-search"></i>
+                    <div class="search-mess">
+                        <dl>
+                            <dt>热门搜索</dt>
+                            <dd>爸爸妈妈</dd>
+                            <dd>Maria</dd>
+                            <dd>旧梦一场</dd>
+                            <dd>信仰</dd>
+                            <dd>少年</dd>
+                            <dd>收敛</dd>
+                            <dd>爱,存在</dd>
+                            <dd>你莫走</dd>
+                            <dd>飞鸟和蝉</dd>
+                            <dd>我爱你不问归期</dd>
+                        </dl>
+                        <dl>
+                            <dt>搜索历史<a href="javascript:;">清空</a></dt>
+                            <dd>轻音乐</dd>
+                            <dd>call your</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="recog-music" title="听歌识曲">
+                    <i class="iconfont icon-ziyuanldpi"></i>
+                </div>
+            </div>
+            <div class="window-tool">
+                <i class="iconfont icon-chuangkou"></i>
+                <i class="iconfont icon-minimum"></i>
+                <i class="iconfont icon-zuidahua"></i>
+                <i class="iconfont icon-guanbi"></i>
+            </div>
+            <div class="tool-split">
+                <i class="iconfont icon-vertical_line"></i>
+            </div>
+            <div class="useer-tool">
+                <img src="./img/images.jpg" alt="usericon">
+                <span>Mgxxx</span>
+                <i class="iconfont icon-zuanshi"></i>
+                <i class="iconfont icon-icon_arrow_bottom"></i>
+                <i class="iconfont icon-yifu"></i>
+                <i class="iconfont icon-caidan"></i>
+            </div>
+        </div>
+        <article class="content-body"></article>
+        <div class="playing-mess">
+            <div class="progress">
+                <progress max="100" value="0"></progress>
+            </div>
+            <div class="about-music">
+                <div class="music-mess">
+                    <span>稻香</span>
+                    -
+                    <span>周杰伦</span>
+                </div>
+                <div class="icon-tools">
+                    <i class="iconfont icon-aixin" style="font-size: 20px;"></i>
+                    <i class="iconfont icon-ziyuan174" style="font-size: 15px;"></i>
+                    <i class="iconfont icon-xiazai" style="font-weight: 700;"></i>
+                    <i class="iconfont icon-gengduo" style="font-weight: 700;"></i>
+                </div>
+            </div>
+            <div class="control">
+                <i class="iconfont icon-shunxubofang" style="font-size: 20px; font-weight: 700;"></i>
+                <i class="iconfont icon-shangyishou" style="font-size: 24px;"></i>
+                <i class="iconfont icon-zanting11" style="font-size: 32px; color: rgb(30, 205, 154);"></i>
+                <i class="iconfont icon-xiayishou" style="font-size: 24px;"></i>
+                <i class="iconfont icon-laba" style="font-size: 20px; font-weight: 700;"></i>
+                <div class="vol-control">
+                    <div class="vol-control-top">
+                        <input type="range" value="100" min="0" max="100">
+                        <span>100%</span>
+                    </div>
+                    <div class="vol-control-bottom">
+                        <i class="iconfont icon-laba" style="font-size: 20px; font-weight: 700;"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="more-info">
+                <span>倍速</span>
+                <span>标准</span>
+                <span>音效</span>
+                <span>词</span>
+                <span style="cursor: pointer;">
+                    <i class="iconfont icon-yinleliebiao-"
+                        style="font-size: 20px; font-weight: 700; color: rgb(30, 206, 155);"></i>
+                    <span style="color: rgb(30, 206, 155);">5</span>
+                </span>
+            </div>
+            <audio src="./audio/Daoxiang zjl.mp3" data-index="0"></audio>
+        </div>
+        <div class="float-right">
+            <header>
+                <div>播放队列</div>
+                <div>5首歌曲</div>
+            </header>
+            <section>
+                <ul>
+                    <li>
+                        <div class="active"></div>
+                        <div class="active"></div>
+                        <div class="float-right-icon" style="display: flex;">
+                            <i class="iconfont icon-zanting2"></i>
+                            <i class="iconfont icon-aixin" style="font-size: 18px;"></i>
+                            <i class="iconfont icon-gengduo"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <div></div>
+                        <div></div>
+                        <div class="float-right-icon">
+                            <i class="iconfont icon-zanting2"></i>
+                            <i class="iconfont icon-aixin" style="font-size: 18px;"></i>
+                            <i class="iconfont icon-gengduo"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <div></div>
+                        <div></div>
+                        <div class="float-right-icon">
+                            <i class="iconfont icon-zanting2"></i>
+                            <i class="iconfont icon-aixin" style="font-size: 18px;"></i>
+                            <i class="iconfont icon-gengduo"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <div></div>
+                        <div></div>
+                        <div class="float-right-icon">
+                            <i class="iconfont icon-zanting2"></i>
+                            <i class="iconfont icon-aixin" style="font-size: 18px;"></i>
+                            <i class="iconfont icon-gengduo"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <div></div>
+                        <div></div>
+                        <div class="float-right-icon">
+                            <i class="iconfont icon-zanting2"></i>
+                            <i class="iconfont icon-aixin" style="font-size: 18px;"></i>
+                            <i class="iconfont icon-gengduo"></i>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <footer>
+                <a href="javascript:;"><span>收起</span></a>
+            </footer>
+        </div>
+    </div>
+
+    <script type="module" src="./js/main.js"></script>
+</body>
+
+</html>

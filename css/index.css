@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+ul {
+    list-style: none;
+}
+
+.iconfont {
+    color:rgb(209, 209, 209);
+    font-size: 16px;
+}
+
+.player {
+    width: 1186px;
+    height: 786px;
+    background-color: pink;
+    margin: 50px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.meun-top,
+.content-body,
+.playing-mess {
+    background-color: rgb(29, 29, 31);
+    width: 976px;
+    position: absolute;
+    left: 210px;
+}
+
+.nav-left {
+    width: 210px;
+    height: 100%;
+    background-color: rgb(23, 23, 24);
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0 28px;
+    overflow: hidden;
+}
+
+.meun-top {
+    height: 60px;
+    top: 0;
+    padding: 14px 40px;
+}
+
+.playing-mess {
+    height: 70px;
+    bottom: 0;
+    padding: 15px 30px 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content-body {
+    height: 656px;
+    top: 60px;
+}

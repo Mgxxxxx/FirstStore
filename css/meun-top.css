@@ -1,0 +1,133 @@
+.search-tool {
+    height: 100%;
+    width: 310px;
+    display: flex;
+    float: left;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.go-or-back {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60px;
+    height: 100%;
+}
+
+.search-music {
+    position: relative;
+}
+
+.search-music>i {
+    position: absolute;
+    top: 50%;
+    right: 8%;
+    transform: translateY(-40%);
+}
+
+.search-music>input {
+    height: 30px;
+    width: 200px;
+    border: transparent;
+    border-radius: 20px;
+    outline: none;
+    padding: 5px 10px;
+    padding-right: 32px;
+    color: white;
+    text-indent: 0.5em;
+    background-color: rgb(51, 51, 52);
+    position: relative;
+}
+
+.search-music .search-mess {
+    position: absolute;
+    width: 471px;
+    height: 354px;
+    background-color: rgb(41, 41, 43);
+    border-radius: 5px;
+    z-index: 1;
+    color: white;
+    top: 32px;
+    padding: 0px 10px;
+    font-size: 14px;
+    text-indent: 1em;
+    display: none;
+}
+
+.search-music .search-mess dt {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 6px;
+}
+
+.search-music .search-mess dt a {
+    float: right;
+    margin-right: 1em;
+    text-indent: 0;
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+.search-music .search-mess dd {
+    height: 30px;
+    line-height: 30px;
+    opacity: 0.8;
+    width: 100%;
+}
+
+.search-music .search-mess dl:nth-of-type(1) {
+    height: 100%;
+    border-right: 1px solid #ececec40;
+}
+
+.search-music .search-mess dl {
+    width: 50%;
+    float: left;
+}
+
+.search-music .search-mess dt {
+    border-bottom: 1px solid #ececec40;
+}
+
+.window-tool {
+    float: right;
+    height: 100%;
+    width: 110px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tool-split {
+    float: right;
+    height: 100%;
+    width: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.useer-tool {
+    float: right;
+    height: 100%;
+    width: 210px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.useer-tool>img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.useer-tool>span {
+    color: rgb(209, 209, 209);
+    font-size: 14px;
+    line-height: 14px;
+    cursor: pointer;
+}
