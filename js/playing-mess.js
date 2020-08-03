@@ -36,7 +36,7 @@ function playingMessFn() {
                 if (audio.paused || audio.ended) {
                     audio.play();
                     if (progressListener === null) {
-                        whenPauseOrEnd();
+                        ifProgressNull();
                     }
                 } else if (!audio.paused) {
                     audio.pause();
@@ -93,7 +93,7 @@ function playingMessFn() {
         control.children[2].classList.add('icon-zanting');
         control.children[2].classList.remove('icon-zanting11');
         if (audio.pause || audio.ended) {
-            whenPauseOrEnd();
+            ifProgressNull();
         }
     });
 
@@ -121,7 +121,9 @@ function playingMessFn() {
         aboutMusic.children[0].children[1].innerText = curMusicInfo[1];
         if (!audio.paused) {
             audio.src = curMusic.path;
-            whenPauseOrEnd();
+            audio.play();
+            if (progressListener === null)
+                ifProgressNull();
         } else if (audio.paused || audio.ended) {
             audio.src = curMusic.path;
             progress.value = 0;
@@ -199,33 +201,35 @@ function playingMessFn() {
         aboutMusic.children[0].children[1].innerText = curMusicInfo[1];
         if (!audio.paused) {
             audio.src = curMusic.path;
-            whenPauseOrEnd();
+            audio.play();
+            if (progressListener === null)
+                ifProgressNull();
         } else if (audio.paused || audio.ended) {
             audio.src = curMusic.path;
             progress.value = 0;
         }
     }
 
-    function whenPauseOrEnd() {
-        audio.play();
-        if (progressListener === null) {
-            progressListener = setInterval(() => {
-                if (audio.currentTime === audio.duration) {
-                    if (audio.dataset.index == musicList.size - 1)
-                        audio.dataset.index = 0;
-                    else audio.dataset.index++;
-                    let curMusic = musicList.get(parseInt(audio.dataset.index));
-                    let curMusicInfo = curMusic.info.split('-');
-                    aboutMusic.children[0].children[0].innerText = curMusicInfo[0];
-                    aboutMusic.children[0].children[1].innerText = curMusicInfo[1];
-                    audio.src = musicList.get(parseInt(audio.dataset.index)).path;
-                    audio.play();
-                }
-                try {
-                    progress.value = (audio.currentTime / audio.duration) * 100;
-                } catch (error) { }
-            });
-        }
+    function ifProgressNull() {
+        // audio.play();
+        // if (progressListener === null) {
+        progressListener = setInterval(() => {
+            if (audio.currentTime === audio.duration) {
+                if (audio.dataset.index == musicList.size - 1)
+                    audio.dataset.index = 0;
+                else audio.dataset.index++;
+                let curMusic = musicList.get(parseInt(audio.dataset.index));
+                let curMusicInfo = curMusic.info.split('-');
+                aboutMusic.children[0].children[0].innerText = curMusicInfo[0];
+                aboutMusic.children[0].children[1].innerText = curMusicInfo[1];
+                audio.src = musicList.get(parseInt(audio.dataset.index)).path;
+                audio.play();
+            }
+            try {
+                progress.value = (audio.currentTime / audio.duration) * 100;
+            } catch (error) { }
+        });
+        // }
     }
 
     function enter(e) {
