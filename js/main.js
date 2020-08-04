@@ -1,7 +1,8 @@
 import { navLeftFn } from './nav-left.js';
 import { menuTopFn } from './meun-top.js';
 import { playingMessFn } from './playing-mess.js';
-import { floatRight } from './float-right.js';
+import { floatRightFn } from './float-right.js';
+import { contentBodyFn } from './content-body.js';
 
 
 let musicList = new Map();
@@ -31,7 +32,8 @@ window.onload = function () {
     navLeftFn();
     menuTopFn();
     playingMessFn();
-    floatRight();
+    floatRightFn();
+    contentBodyFn();
 }
 
 export { musicList }

@@ -66,4 +66,6 @@ ul {
 .content-body {
     height: 656px;
     top: 60px;
+    color: white;
+    padding: 20px 40px 0 40px;
 }

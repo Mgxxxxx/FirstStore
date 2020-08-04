@@ -8,7 +8,7 @@ import {
 import { musicList } from './main.js';
 import { moreInfo, audio, control, aboutMusic } from './playing-mess-components.js';
 
-function floatRight() {
+function floatRightFn() {
     floatRightToggle.onclick = function () {
         floatRightBox.style.right = "-300px";
     }
@@ -102,4 +102,4 @@ function floatRight() {
 
 }
 
-export { floatRight }
+export { floatRightFn }
