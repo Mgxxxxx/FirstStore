@@ -23,8 +23,6 @@
 
 .scroll-bar-area {
     position: absolute;
-    height: 100%;
-    width: 8px;
     right: 2px;
     top: 0;
 }
@@ -32,11 +30,8 @@
 .scroll-bar {
     position: absolute;
     height: calc(100% - 100px);
-    width: 8px;
     /* right: 2px; */
     top: 90px;
-    background-color: rgb(69, 69, 70);
-    border-radius: 5px;
     display: none;
     transition: height .5s;
 }
@@ -44,7 +39,6 @@
 
 .nav-left-body::-webkit-scrollbar {
     width: 0px;
-    /* background-color: skyblue; */
 }
 
 .nav-sub-item {

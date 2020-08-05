@@ -52,10 +52,11 @@
                     </li>
                 </ul>
             </div>
-            <div class="scroll-bar-area">
-                <div class="scroll-bar"></div>
+            <div class="scroll-bar-area scrollbararea">
+                <div class="scroll-bar scrollbar"></div>
             </div>
         </nav>
+
         <div class=" meun-top">
             <div class="search-tool">
                 <div class="go-or-back">
@@ -108,6 +109,7 @@
                 <i class="iconfont icon-caidan"></i>
             </div>
         </div>
+
         <article class="content-body">
             <h1 style="font-size: 30px;">音乐馆</h1>
             <nav class="content-nav">
@@ -138,23 +140,23 @@
             <div class="cur-nav-content">
                 <div class="slideBoxOuter">
                     <div class="slideShowBox">
-                        <!-- 使用‘center/100%’的时候，图片如果过大，则第一次轮播的时候会卡顿，
+                        <!-- 使用'background: url();'的时候，图片如果过大，则第一次轮播的时候会卡顿，
                              推测可能是第一次调整大小的时候会卡顿，所以要把图片的大小设置好 -->
                         <ul style="transition-duration: 0.5s;">
-                            <li class="slideBlock" style="background: url(../img/bg20.jpg) center/100%;">9</li>
-                            <li class="slideBlock" style="background: url(../img/bg19.jpg) center/100%;">10</li>
-                            <li class="slideBlock" style="background: url(../img/bg18.jpg) center/100%;">1</li>
-                            <li class="slideBlock" style="background: url(../img/bg16.jpg) center/100%;">2</li>
-                            <li class="slideBlock" style="background: url(../img/bg14.jpg) center/100%;">3</li>
+                            <li class="slideBlock" style="background: url(../img/bg20.jpg) 0 0/100%;">9</li>
+                            <li class="slideBlock" style="background: url(../img/bg19.jpg) 0 0/100%;">10</li>
+                            <li class="slideBlock" style="background: url(../img/bg18.jpg) 0 0/100%;">1</li>
+                            <li class="slideBlock" style="background: url(../img/bg16.jpg) 0 0/100%;">2</li>
+                            <li class="slideBlock" style="background: url(../img/bg14.jpg) 0 0/100%;">3</li>
                             <li class="slideBlock" style="background: url(../img/bg13.jpg) center/100%;">4</li>
-                            <li class="slideBlock" style="background: url(../img/bg12.jpg) center/100%;">5</li>
-                            <li class="slideBlock" style="background: url(../img/bg10.jpg) center/100%;">6</li>
-                            <li class="slideBlock" style="background: url(../img/bg5.jpg) center/100%;">7</li>
+                            <li class="slideBlock" style="background: url(../img/bg12.jpg) 0 0/100%;">5</li>
+                            <li class="slideBlock" style="background: url(../img/bg10.jpg) 0 0/100%;">6</li>
+                            <li class="slideBlock" style="background: url(../img/bg5.jpg) 0 0/100%;">7</li>
                             <li class="slideBlock" style="background: url(../img/bg4.jpg) center/100%;">8</li>
-                            <li class="slideBlock" style="background: url(../img/bg20.jpg) center/100%;">9</li>
-                            <li class="slideBlock" style="background: url(../img/bg19.jpg) center/100%;">10</li>
-                            <li class="slideBlock" style="background: url(../img/bg18.jpg) center/100%;">1</li>
-                            <li class="slideBlock" style="background: url(../img/bg16.jpg) center/100%;">2</li>
+                            <li class="slideBlock" style="background: url(../img/bg20.jpg) 0 0/100%;">9</li>
+                            <li class="slideBlock" style="background: url(../img/bg19.jpg) 0 0 /100%;">10</li>
+                            <li class="slideBlock" style="background: url(../img/bg18.jpg) 0 0/100%;">1</li>
+                            <li class="slideBlock" style="background: url(../img/bg16.jpg) 0 0/100%;">2</li>
                         </ul>
                         <div class="slidePoints">
                             <ul>
@@ -183,8 +185,95 @@
                         <i class="iconfont icon-jiantou1"></i>
                     </div>
                 </div>
+                <div class="songs-lists">
+                    <div class="offical-list songs-list">
+                        <div class="title">
+                            <h2>官方歌单</h2>
+                            <span>官方甄选订阅歌单</span>
+                            <a href="javascript:;">更多 <span>></span></a>
+                        </div>
+                        <div class="offical-list-blocks songs-list-blocks">
+                            <ul>
+                                <li class="offical-list-block songs-list-block">
+                                    <div><i class="iconfont icon-zanting11"></i>
+                                        <div></div>
+                                    </div>
+                                    <a href="javascript:;">今日私享</a>
+                                </li>
+                                <li class="offical-list-block songs-list-block">
+                                    <div><i class="iconfont icon-zanting11"></i>
+                                        <div></div>
+                                    </div>
+                                    <a href="javascript:;">今日私享</a>
+                                </li>
+                                <li class="offical-list-block songs-list-block">
+                                    <div><i class="iconfont icon-zanting11"></i>
+                                        <div></div>
+                                    </div>
+                                    <a href="javascript:;">今日私享</a>
+                                </li>
+                                <li class="offical-list-block songs-list-block">
+                                    <div><i class="iconfont icon-zanting11"></i>
+                                        <div></div>
+                                    </div>
+                                    <a href="javascript:;">今日私享</a>
+                                </li>
+                                <li class="offical-list-block songs-list-block">
+                                    <div><i class="iconfont icon-zanting11"></i>
+                                        <div></div>
+                                    </div>
+                                    <a href="javascript:;">今日私享</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="recommend-list songs-list">
+                        <div class="title">
+                            <h2>推荐歌单</h2>
+                            <a href="javascript:;">更多 <span>></span></a>
+                        </div>
+                        <div class="recommend-list-blocks songs-list-blocks">
+                            <ul>
+                                <li class="recommend-list-block songs-list-block">
+                                    <div><i class="iconfont icon-zanting11"></i>
+                                        <div></div>
+                                    </div>
+                                    <a href="javascript:;">你给的感动，我留了一生去问驱蚊器请问</a>
+                                </li>
+                                <li class="recommend-list-block songs-list-block">
+                                    <div><i class="iconfont icon-zanting11"></i>
+                                        <div></div>
+                                    </div>
+                                    <a href="javascript:;">你给的感动，我留了一生去问驱蚊器请问</a>
+                                </li>
+                                <li class="recommend-list-block songs-list-block">
+                                    <div><i class="iconfont icon-zanting11"></i>
+                                        <div></div>
+                                    </div>
+                                    <a href="javascript:;">你给的感动，我留了一生去问驱蚊器请问</a>
+                                </li>
+                                <li class="recommend-list-block songs-list-block">
+                                    <div><i class="iconfont icon-zanting11"></i>
+                                        <div></div>
+                                    </div>
+                                    <a href="javascript:;">你给的感动，我留了一生去问驱蚊器请问</a>
+                                </li>
+                                <li class="recommend-list-block songs-list-block">
+                                    <div><i class="iconfont icon-zanting11"></i>
+                                        <div></div>
+                                    </div>
+                                    <a href="javascript:;">你给的感动，我留了一生去问驱蚊器请问</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="cur-content-scrollarea scrollbararea">
+                    <div class="cur-content-scrollbar scrollbar"></div>
+                </div>
             </div>
         </article>
+
         <div class="playing-mess">
             <div class="progress">
                 <progress max="100" value="0"></progress>
@@ -231,6 +320,7 @@
             </div>
             <audio src="./audio/Daoxiang zjl.mp3" data-index="0"></audio>
         </div>
+
         <div class="float-right">
             <header>
                 <div>播放队列</div>

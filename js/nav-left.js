@@ -156,14 +156,6 @@ function navLeftFn() {
         scrollBar.style.display = "none";
     });
 
-    scrollBar.addEventListener('mouseenter', e => {
-        scrollBar.style.backgroundColor = "rgb(93, 93, 93)";
-    });
-
-    scrollBar.addEventListener('mouseleave', e => {
-        scrollBar.style.backgroundColor = "rgb(69, 69, 70)";
-    });
-
     let startY, scrollPress;
     scrollBar.addEventListener('mousedown', e => {
         startY = e.pageY;

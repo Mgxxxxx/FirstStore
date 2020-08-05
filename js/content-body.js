@@ -3,7 +3,9 @@ import {
     slideLeft,
     slideRight,
     slideShowBox,
-    slidePoints
+    slidePoints,
+    curContent,
+    curContentScrollBar
 } from './content-body-compoents.js';
 
 function contentBodyFn() {
@@ -16,10 +18,6 @@ function contentBodyFn() {
             contentNavActive = index;
         }
     });
-    slideLeft.onmouseenter = e => e.target.style.color = "rgb(30, 210, 169)";
-    slideLeft.onmouseleave = e => e.target.style.color = "rgb(209, 209, 209)";
-    slideRight.onmouseenter = e => e.target.style.color = "rgb(30, 210, 169)";
-    slideRight.onmouseleave = e => e.target.style.color = "rgb(209, 209, 209)";
 
     let flag = true;
     let curPicIndex = 0;
@@ -27,7 +25,7 @@ function contentBodyFn() {
 
     slideTimer = setInterval(() => {
         slideRight.click();
-    }, 3000);
+    }, 5000);
 
     slideLeft.onclick = e => {
         if (flag) {
@@ -91,6 +89,17 @@ function contentBodyFn() {
         li.onmouseenter = e => flag = false;
         li.onmouseleave = e => flag = true;
     }
+
+    let actHeight = 0;
+    for (let e of curContent.children) {
+        if (e === curContentScrollBar.parentElement)
+            continue;
+        actHeight += e.offsetHeight;
+    }
+
+    curContentScrollBar.style.height = `calc(100% - ${actHeight - curContent.offsetHeight + 83}px)`;
+
+    curContent.onscroll = e => curContentScrollBar.style.top = curContent.scrollTop + 'px';
 
 }
 

@@ -67,5 +67,18 @@ ul {
     height: 656px;
     top: 60px;
     color: white;
-    padding: 20px 40px 0 40px;
 }
+
+.scrollbararea {
+    height: 100%;
+    width: 8px;
+    border-radius: 5px;
+}
+
+.scrollbar {
+    background-color: rgb(69, 69, 70);
+    border-radius: 5px;
+    width: 8px;
+}
+
+.scrollbar:hover {background-color: rgb(93, 93, 93);}
