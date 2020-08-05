@@ -7,6 +7,7 @@ import {
 } from './content-body-compoents.js';
 
 function contentBodyFn() {
+
     let contentNavActive = 0;
     contentNavLis.forEach((li, index) => {
         li.onclick = function (e) {
@@ -40,7 +41,7 @@ function contentBodyFn() {
                 slideShowBox.style.transitionDuration = "0s";
                 slideShowBox.style.left = '-5496px';
                 setTimeout(() => {
-                    slideShowBox.style.transitionDuration = "0.3s";
+                    slideShowBox.style.transitionDuration = "0.5s";
                     slideShowBox.style.left = 916 + slideShowBox.offsetLeft + 'px';
                 })
             }
@@ -57,12 +58,12 @@ function contentBodyFn() {
                 curPicIndex = 0;
             else curPicIndex++;
             slidePoints[curPicIndex].children[0].style.backgroundColor = "white";
-            if (slideShowBox.offsetLeft <= -4580) {
+            if (slideShowBox.offsetLeft == -4580) {
                 slideShowBox.style.transitionDuration = "0s";
                 slideShowBox.style.left = '0px';
                 setTimeout(() => {
                     slideShowBox.style.left = -916 + slideShowBox.offsetLeft + 'px';
-                    slideShowBox.style.transitionDuration = "0.3s";
+                    slideShowBox.style.transitionDuration = "0.5s";
                 })
             }
             else slideShowBox.style.left = -916 + slideShowBox.offsetLeft + 'px';

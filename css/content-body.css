@@ -33,7 +33,7 @@
     position: absolute;
     top: 0;
     left: -916px;
-    transition: 0.3s ease;
+    transition-timing-function: ease;
 }
 
 .content-body .slideShowBox .slideBlock {
