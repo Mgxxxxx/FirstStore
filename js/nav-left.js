@@ -15,7 +15,6 @@ function navLeftFn() {
     let actNavLeftBodyHeight = 0;
     for (let i of navLeftBody.children)
         actNavLeftBodyHeight += i.offsetHeight + 10;
-    console.log(actNavLeftBodyHeight)
 
 
     let activeLi = 0;
