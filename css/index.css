@@ -25,7 +25,7 @@ ul {
     background-color: pink;
     margin: 50px auto;
     position: relative;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .meun-top,
@@ -45,7 +45,7 @@ ul {
     left: 0;
     top: 0;
     padding: 0 28px;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .meun-top {
