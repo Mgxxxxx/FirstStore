@@ -1,4 +1,9 @@
-.content-body>h1 {padding: 20px 40px 0 40px;}
+.content-body>div:nth-child(n+2) {display: none;}
+
+.content-body h1 {
+    padding: 20px 40px 0 40px;
+    white-space: nowrap;
+}
 
 .content-body nav {
     margin: 25px 0 20px 0;
@@ -18,17 +23,20 @@
     color: rgb(30, 210, 169);
 }
 
-.cur-nav-content {
+.cur-nav-content>div {padding: 0 40px;}
+
+.cur-nav-content>div:nth-child(n+2) {display: none;}
+
+.choice-content {
     overflow: auto;
     height: 519px;
-    padding: 0 40px;
 }
 
-.cur-nav-content::-webkit-scrollbar {display: none;}
+.choice-content::-webkit-scrollbar {display: none;}
 
 
 /* slide */
-.content-nav-active {
+.musichall-nav-active {
     color: rgb(30, 210, 169);
     border-bottom: 2px solid rgb(30, 210, 169);
 }
@@ -254,6 +262,8 @@
 .offical-list-block>div {background: url(../img/bg20.jpg) 48% 24% / 300%;}
 
 .recommend-list-block>div {background: url(../img/bg19.jpg) 43% 0% / 300%;}
+
+.latest-list-block>div {background: url(../img/bg13.jpg) 80% 0% / 200%;}
 
 .cur-content-scrollarea {
     position: absolute;

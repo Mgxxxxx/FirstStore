@@ -1,4 +1,4 @@
-let contentNavLis = document.querySelectorAll('.content-nav li');
+let musichallNavLis = document.querySelectorAll('.musichall-nav li');
 
 let slideLeft = document.querySelector('.slideLeft i');
 
@@ -8,16 +8,22 @@ let slideShowBox = document.querySelector('.slideShowBox ul');
 
 let slidePoints = document.querySelectorAll('.slidePoints a');
 
-let curContent = document.querySelector('.cur-nav-content');
+let curNavContent = document.querySelector('.cur-nav-content');
 
 let curContentScrollBar = document.querySelector('.cur-content-scrollbar');
 
+let musichallH1 = document.querySelector('.music-hall h1');
+
+let contentBody = document.querySelector('.content-body');
+
 export {
-    contentNavLis,
+    musichallNavLis,
     slideLeft,
     slideRight,
     slideShowBox,
     slidePoints,
-    curContent,
-    curContentScrollBar
+    curNavContent,
+    curContentScrollBar,
+    musichallH1,
+    contentBody
 }

@@ -1,21 +1,24 @@
 import {
-    contentNavLis,
+    musichallNavLis,
     slideLeft,
     slideRight,
     slideShowBox,
     slidePoints,
-    curContent,
-    curContentScrollBar
-} from './content-body-compoents.js';
+    curNavContent,
+    curContentScrollBar,
+    musichallH1
+} from './content-music-hall-compoents.js';
 
 function contentBodyFn() {
 
     let contentNavActive = 0;
-    contentNavLis.forEach((li, index) => {
+    musichallNavLis.forEach((li, index) => {
         li.onclick = function (e) {
-            contentNavLis[contentNavActive].classList.remove('content-nav-active');
-            e.target.classList.add('content-nav-active');
+            musichallNavLis[contentNavActive].classList.remove('musichall-nav-active');
+            e.target.classList.add('musichall-nav-active');
+            curNavContent.children[contentNavActive].style.display = "none";
             contentNavActive = index;
+            curNavContent.children[contentNavActive].style.display = "block";
         }
     });
 
@@ -90,6 +93,7 @@ function contentBodyFn() {
         li.onmouseleave = e => flag = true;
     }
 
+    let curContent = curNavContent.children[contentNavActive];
     let actHeight = 0;
     for (let e of curContent.children) {
         if (e === curContentScrollBar.parentElement)
@@ -97,9 +101,21 @@ function contentBodyFn() {
         actHeight += e.offsetHeight;
     }
 
-    curContentScrollBar.style.height = `calc(100% - ${actHeight - curContent.offsetHeight + 83}px)`;
+    curContentScrollBar.style.height = `calc(100% * ${curContent.offsetHeight / actHeight} - 50px)`;
 
-    curContent.onscroll = e => curContentScrollBar.style.top = curContent.scrollTop + 'px';
+    let h = musichallH1.offsetHeight, w = musichallH1.offsetWidth;
+    curContent.onscroll = e => {
+        if (curContent.scrollTop < h) {
+            musichallH1.style.height = h - curContent.scrollTop + 'px';
+            musichallH1.style.width = w * (h - curContent.scrollTop) / h + 'px';
+            musichallH1.style.fontSize = 30 * (h - curContent.scrollTop) / h + 'px';
+        } else if (curContent.scrollTop >= h) {
+            musichallH1.style.height = '0px';
+            musichallH1.style.width = '0px';
+            musichallH1.style.fontSize = '0px';
+        }
+        curContentScrollBar.style.top = `calc(100% * ${curContent.scrollTop / actHeight})`;
+    };
 
 }
 

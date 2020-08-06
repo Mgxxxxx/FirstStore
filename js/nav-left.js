@@ -8,12 +8,18 @@ import {
     scrollBar
 } from './nav-left-components.js';
 
+import { contentBody } from './content-music-hall-compoents.js';
+
 function navLeftFn() {
     let navLis = document.querySelectorAll('.nav-sub-item li:nth-child(n+2)');
-    let computedStyle1 = document.defaultView.getComputedStyle(createdList, null);
-    let computedStyle2 = document.defaultView.getComputedStyle(collectedList, null);
+    let actNavLeftBodyHeight = 0;
+    for (let i of navLeftBody.children)
+        actNavLeftBodyHeight += i.offsetHeight + 10;
+    console.log(actNavLeftBodyHeight)
 
-    for (let li of navLis) {
+
+    let activeLi = 0;
+    navLis.forEach((li, index) => {
         li.addEventListener('mouseenter', e => {
             if (li.dataset.active !== "true")
                 li.style.backgroundColor = 'rgb(44, 44, 45)';
@@ -31,8 +37,11 @@ function navLeftFn() {
             }
             li.style.backgroundColor = 'rgb(30, 205, 152)';
             li.dataset.active = "true";
+            contentBody.children[activeLi].style.display = "none";
+            activeLi = index;
+            contentBody.children[activeLi].style.display = "block";
         });
-    }
+    })
 
     createListBtn.addEventListener('click', e => {
         if (createdList.children.length > 10) {
@@ -93,6 +102,7 @@ function navLeftFn() {
             text.focus();
         });
         createdList.insertBefore(li, createdList.children[1]);
+        actNavLeftBodyHeight += li.offsetHeight;
         navLis = document.querySelectorAll('.nav-sub-item li:nth-child(n+2)');
         createdList.style.height = "";
         createdList.style.overflow = "visible";
@@ -100,9 +110,10 @@ function navLeftFn() {
         createdList.dataset.show = "true";
         createListToggleBtn.classList.add('icon-icon_arrow_bottom');
         createListToggleBtn.classList.remove('icon-icon_arrow_top');
-        if (parseInt(computedStyle1.height) + parseInt(computedStyle2.height) > 314) {
+        if (createdList.offsetHeight + collectedList.offsetHeight > 314) {
             scrollBar.style.display = "block";
-            scrollBar.style.height = 696 - (parseInt(computedStyle1.height) + parseInt(computedStyle2.height) - 320) + "px";
+            scrollBar.style.height = 696 - (createdList.offsetHeight + collectedList.offsetHeight - 320) + "px";
+            // scrollBar.style.height = `calc(100% * ${(navLeftBody.offsetHeight - 10) / actNavLeftBodyHeight})`;
         }
         else scrollBar.style.display = "none";
     });
@@ -120,7 +131,7 @@ function navLeftFn() {
             createdList.style.overflow = "visible";
             createdList.dataset.show = "true";
         }
-        if (parseInt(computedStyle1.height) + parseInt(computedStyle2.height) > 314)
+        if (createdList.offsetHeight + collectedList.offsetHeight > 314)
             scrollBar.style.display = "block";
         else scrollBar.style.display = "none";
     });
@@ -138,17 +149,18 @@ function navLeftFn() {
             collectedList.style.overflow = "visible";
             collectedList.dataset.show = "true";
         }
-        if (parseInt(computedStyle1.height) + parseInt(computedStyle2.height) > 314)
+        if (createdList.offsetHeight + collectedList.offsetHeight > 314)
             scrollBar.style.display = "block";
         else scrollBar.style.display = "none";
     });
 
     navLeftBody.addEventListener('scroll', e => {
-        scrollBar.style.top = 90 + e.target.scrollTop + "px";
+        scrollBar.style.top = e.target.scrollTop + "px";
+        // scrollBar.style.top = `calc(100% * ${e.target.scrollTop / actNavLeftBodyHeight})`;
     });
 
     navLeftBody.parentElement.addEventListener('mouseenter', e => {
-        if (parseInt(computedStyle1.height) + parseInt(computedStyle2.height) > 314)
+        if (createdList.offsetHeight + collectedList.offsetHeight > 314)
             scrollBar.style.display = "block";
     });
 

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./css/meun-top.css">
     <link rel="stylesheet" href="./css/playing-mess.css">
     <link rel="stylesheet" href="./css/float-right.css">
-    <link rel="stylesheet" href="./css/content-body.css">
+    <link rel="stylesheet" href="./css/content-music-hall.css">
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1968041_b8vwkx85vv9.css">
 
 </head>
@@ -25,7 +25,8 @@
             <div class="nav-left-body">
                 <ul class="online-music nav-sub-item">
                     <li class="nav-sub-head"><span>在线音乐</span></li>
-                    <li><i class="iconfont icon-yinyue"></i>音乐馆</li>
+                    <li data-active="true" style="background-color: rgb(30, 205, 152);"><i
+                            class="iconfont icon-yinyue"></i>音乐馆</li>
                     <li><i class="iconfont icon-video"></i>视频</li>
                     <li><i class="iconfont icon-diantai1"></i>电台</li>
                 </ul>
@@ -111,166 +112,258 @@
         </div>
 
         <article class="content-body">
-            <h1 style="font-size: 30px;">音乐馆</h1>
-            <nav class="content-nav">
-                <ul>
-                    <a href="javascript:;">
-                        <li class="content-nav-active">精选</li>
-                    </a>
-                    <a href="javascript:;">
-                        <li>排行</li>
-                    </a>
-                    <a href="javascript:;">
-                        <li>歌手</li>
-                    </a>
-                    <a href="javascript:;">
-                        <li>分类歌单</li>
-                    </a>
-                    <a href="javascript:;">
-                        <li>数字专辑</li>
-                    </a>
-                    <a href="javascript:;">
-                        <li>有声节目</li>
-                    </a>
-                    <a href="javascript:;">
-                        <li>手机专享</li>
-                    </a>
-                </ul>
-            </nav>
-            <div class="cur-nav-content">
-                <div class="slideBoxOuter">
-                    <div class="slideShowBox">
-                        <!-- 使用'background: url();'的时候，图片如果过大，则第一次轮播的时候会卡顿，
-                             推测可能是第一次调整大小的时候会卡顿，所以要把图片的大小设置好 -->
-                        <ul style="transition-duration: 0.5s;">
-                            <li class="slideBlock" style="background: url(../img/bg20.jpg) 0 0/100%;">9</li>
-                            <li class="slideBlock" style="background: url(../img/bg19.jpg) 0 0/100%;">10</li>
-                            <li class="slideBlock" style="background: url(../img/bg18.jpg) 0 0/100%;">1</li>
-                            <li class="slideBlock" style="background: url(../img/bg16.jpg) 0 0/100%;">2</li>
-                            <li class="slideBlock" style="background: url(../img/bg14.jpg) 0 0/100%;">3</li>
-                            <li class="slideBlock" style="background: url(../img/bg13.jpg) center/100%;">4</li>
-                            <li class="slideBlock" style="background: url(../img/bg12.jpg) 0 0/100%;">5</li>
-                            <li class="slideBlock" style="background: url(../img/bg10.jpg) 0 0/100%;">6</li>
-                            <li class="slideBlock" style="background: url(../img/bg5.jpg) 0 0/100%;">7</li>
-                            <li class="slideBlock" style="background: url(../img/bg4.jpg) center/100%;">8</li>
-                            <li class="slideBlock" style="background: url(../img/bg20.jpg) 0 0/100%;">9</li>
-                            <li class="slideBlock" style="background: url(../img/bg19.jpg) 0 0 /100%;">10</li>
-                            <li class="slideBlock" style="background: url(../img/bg18.jpg) 0 0/100%;">1</li>
-                            <li class="slideBlock" style="background: url(../img/bg16.jpg) 0 0/100%;">2</li>
-                        </ul>
-                        <div class="slidePoints">
-                            <ul>
-                                <a href="javascript:;">
-                                    <li style="background-color: white;"></li>
-                                </a>
-                                <a href="javascript:;">
-                                    <li></li>
-                                </a>
-                                <a href="javascript:;">
-                                    <li></li>
-                                </a>
-                                <a href="javascript:;">
-                                    <li></li>
-                                </a>
-                                <a href="javascript:;">
-                                    <li></li>
-                                </a>
-                            </ul>
+            <div class="music-hall">
+                <h1 style="font-size: 30px;">音乐馆</h1>
+                <nav class="musichall-nav">
+                    <ul>
+                        <a href="javascript:;">
+                            <li class="musichall-nav-active">精选</li>
+                        </a>
+                        <a href="javascript:;">
+                            <li>排行</li>
+                        </a>
+                        <a href="javascript:;">
+                            <li>歌手</li>
+                        </a>
+                        <a href="javascript:;">
+                            <li>分类歌单</li>
+                        </a>
+                        <a href="javascript:;">
+                            <li>数字专辑</li>
+                        </a>
+                        <a href="javascript:;">
+                            <li>有声节目</li>
+                        </a>
+                        <a href="javascript:;">
+                            <li>手机专享</li>
+                        </a>
+                    </ul>
+                </nav>
+                <div class="cur-nav-content">
+                    <div class="choice-content">
+                        <div class="slideBoxOuter">
+                            <div class="slideShowBox">
+                                <!-- 使用'background: url();'的时候，图片如果过大，则第一次轮播的时候会卡顿，
+                                 推测可能是第一次调整大小的时候会卡顿，所以要把图片的大小设置好 -->
+                                <ul style="transition-duration: 0.5s;">
+                                    <li class="slideBlock" style="background: url(../img/bg20.jpg) 0 0/100%;">9</li>
+                                    <li class="slideBlock" style="background: url(../img/bg19.jpg) 0 0/100%;">10</li>
+                                    <li class="slideBlock" style="background: url(../img/bg18.jpg) 0 0/100%;">1</li>
+                                    <li class="slideBlock" style="background: url(../img/bg16.jpg) 0 0/100%;">2</li>
+                                    <li class="slideBlock" style="background: url(../img/bg14.jpg) 0 0/100%;">3</li>
+                                    <li class="slideBlock" style="background: url(../img/bg13.jpg) center/100%;">4</li>
+                                    <li class="slideBlock" style="background: url(../img/bg12.jpg) 0 0/100%;">5</li>
+                                    <li class="slideBlock" style="background: url(../img/bg10.jpg) 0 0/100%;">6</li>
+                                    <li class="slideBlock" style="background: url(../img/bg5.jpg) 0 0/100%;">7</li>
+                                    <li class="slideBlock" style="background: url(../img/bg4.jpg) center/100%;">8</li>
+                                    <li class="slideBlock" style="background: url(../img/bg20.jpg) 0 0/100%;">9</li>
+                                    <li class="slideBlock" style="background: url(../img/bg19.jpg) 0 0 /100%;">10</li>
+                                    <li class="slideBlock" style="background: url(../img/bg18.jpg) 0 0/100%;">1</li>
+                                    <li class="slideBlock" style="background: url(../img/bg16.jpg) 0 0/100%;">2</li>
+                                </ul>
+                                <div class="slidePoints">
+                                    <ul>
+                                        <a href="javascript:;">
+                                            <li style="background-color: white;"></li>
+                                        </a>
+                                        <a href="javascript:;">
+                                            <li></li>
+                                        </a>
+                                        <a href="javascript:;">
+                                            <li></li>
+                                        </a>
+                                        <a href="javascript:;">
+                                            <li></li>
+                                        </a>
+                                        <a href="javascript:;">
+                                            <li></li>
+                                        </a>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="slideLeft">
+                                <i class="iconfont icon-jiantou1-copy"></i>
+                            </div>
+                            <div class="slideRight">
+                                <i class="iconfont icon-jiantou1"></i>
+                            </div>
+                        </div>
+                        <div class="songs-lists">
+                            <div class="offical-list songs-list">
+                                <div class="title">
+                                    <h2>官方歌单</h2>
+                                    <span>官方甄选订阅歌单</span>
+                                    <a href="javascript:;">更多 <span>></span></a>
+                                </div>
+                                <div class="offical-list-blocks songs-list-blocks">
+                                    <ul>
+                                        <li class="offical-list-block songs-list-block">
+                                            <div><i class="iconfont icon-zanting11"></i>
+                                                <div></div>
+                                            </div>
+                                            <a href="javascript:;">今日私享</a>
+                                        </li>
+                                        <li class="offical-list-block songs-list-block">
+                                            <div><i class="iconfont icon-zanting11"></i>
+                                                <div></div>
+                                            </div>
+                                            <a href="javascript:;">今日私享</a>
+                                        </li>
+                                        <li class="offical-list-block songs-list-block">
+                                            <div><i class="iconfont icon-zanting11"></i>
+                                                <div></div>
+                                            </div>
+                                            <a href="javascript:;">今日私享</a>
+                                        </li>
+                                        <li class="offical-list-block songs-list-block">
+                                            <div><i class="iconfont icon-zanting11"></i>
+                                                <div></div>
+                                            </div>
+                                            <a href="javascript:;">今日私享</a>
+                                        </li>
+                                        <li class="offical-list-block songs-list-block">
+                                            <div><i class="iconfont icon-zanting11"></i>
+                                                <div></div>
+                                            </div>
+                                            <a href="javascript:;">今日私享</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="recommend-list songs-list">
+                                <div class="title">
+                                    <h2>推荐歌单</h2>
+                                    <a href="javascript:;">更多 <span>></span></a>
+                                </div>
+                                <div class="recommend-list-blocks songs-list-blocks">
+                                    <ul>
+                                        <li class="recommend-list-block songs-list-block">
+                                            <div><i class="iconfont icon-zanting11"></i>
+                                                <div></div>
+                                            </div>
+                                            <a href="javascript:;">你给的感动，我留了一生</a>
+                                        </li>
+                                        <li class="recommend-list-block songs-list-block">
+                                            <div><i class="iconfont icon-zanting11"></i>
+                                                <div></div>
+                                            </div>
+                                            <a href="javascript:;">你给的感动，我留了一生</a>
+                                        </li>
+                                        <li class="recommend-list-block songs-list-block">
+                                            <div><i class="iconfont icon-zanting11"></i>
+                                                <div></div>
+                                            </div>
+                                            <a href="javascript:;">你给的感动，我留了一生</a>
+                                        </li>
+                                        <li class="recommend-list-block songs-list-block">
+                                            <div><i class="iconfont icon-zanting11"></i>
+                                                <div></div>
+                                            </div>
+                                            <a href="javascript:;">你给的感动，我留了一生</a>
+                                        </li>
+                                        <li class="recommend-list-block songs-list-block">
+                                            <div><i class="iconfont icon-zanting11"></i>
+                                                <div></div>
+                                            </div>
+                                            <a href="javascript:;">你给的感动，我留了一生</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="latest-list songs-list">
+                                <div class="title">
+                                    <h2>最新发行</h2>
+                                    <a href="javascript:;">更多 <span>></span></a>
+                                </div>
+                                <div class="latest-list-blocks songs-list-blocks">
+                                    <ul>
+                                        <li class="latest-list-block songs-list-block">
+                                            <div><i class="iconfont icon-zanting11"></i>
+                                                <div></div>
+                                            </div>
+                                            <a href="javascript:;">罪恶王冠</a>
+                                        </li>
+                                        <li class="latest-list-block songs-list-block">
+                                            <div><i class="iconfont icon-zanting11"></i>
+                                                <div></div>
+                                            </div>
+                                            <a href="javascript:;">罪恶王冠</a>
+                                        </li>
+                                        <li class="latest-list-block songs-list-block">
+                                            <div><i class="iconfont icon-zanting11"></i>
+                                                <div></div>
+                                            </div>
+                                            <a href="javascript:;">罪恶王冠</a>
+                                        </li>
+                                        <li class="latest-list-block songs-list-block">
+                                            <div><i class="iconfont icon-zanting11"></i>
+                                                <div></div>
+                                            </div>
+                                            <a href="javascript:;">罪恶王冠</a>
+                                        </li>
+                                        <li class="latest-list-block songs-list-block">
+                                            <div><i class="iconfont icon-zanting11"></i>
+                                                <div></div>
+                                            </div>
+                                            <a href="javascript:;">罪恶王冠</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cur-content-scrollarea scrollbararea">
+                            <div class="cur-content-scrollbar scrollbar"></div>
                         </div>
                     </div>
-                    <div class="slideLeft">
-                        <i class="iconfont icon-jiantou1-copy"></i>
+                    <div class="ranklist">
+                        <h2>排行</h2>
+                        <img src="./img/bg12.jpg" alt="no picture">
                     </div>
-                    <div class="slideRight">
-                        <i class="iconfont icon-jiantou1"></i>
+                    <div class="singer">
+                        <h2>歌手</h2>
+                        <img src="./img/bg14.jpg" alt="no picture">
+                    </div>
+                    <div class="category-list">
+                        <h2>分类歌单</h2>
+                        <img src="./img/bg16.jpg" alt="no picture" style="width: 100%;">
+                    </div>
+                    <div class="digital-album">
+                        <h2>数字专辑</h2>
+                        <img src="./img/bg18.jpg" alt="no picture">
+                    </div>
+                    <div class="aduio-album">
+                        <h2>有声专辑</h2>
+                        <img src="./img/bg10.jpg" alt="no picture">
+                    </div>
+                    <div class="mobile-enjoy">
+                        <h2>手机专享</h2>
+                        <img src="./img/bg5.jpg" alt="no picture">
                     </div>
                 </div>
-                <div class="songs-lists">
-                    <div class="offical-list songs-list">
-                        <div class="title">
-                            <h2>官方歌单</h2>
-                            <span>官方甄选订阅歌单</span>
-                            <a href="javascript:;">更多 <span>></span></a>
-                        </div>
-                        <div class="offical-list-blocks songs-list-blocks">
-                            <ul>
-                                <li class="offical-list-block songs-list-block">
-                                    <div><i class="iconfont icon-zanting11"></i>
-                                        <div></div>
-                                    </div>
-                                    <a href="javascript:;">今日私享</a>
-                                </li>
-                                <li class="offical-list-block songs-list-block">
-                                    <div><i class="iconfont icon-zanting11"></i>
-                                        <div></div>
-                                    </div>
-                                    <a href="javascript:;">今日私享</a>
-                                </li>
-                                <li class="offical-list-block songs-list-block">
-                                    <div><i class="iconfont icon-zanting11"></i>
-                                        <div></div>
-                                    </div>
-                                    <a href="javascript:;">今日私享</a>
-                                </li>
-                                <li class="offical-list-block songs-list-block">
-                                    <div><i class="iconfont icon-zanting11"></i>
-                                        <div></div>
-                                    </div>
-                                    <a href="javascript:;">今日私享</a>
-                                </li>
-                                <li class="offical-list-block songs-list-block">
-                                    <div><i class="iconfont icon-zanting11"></i>
-                                        <div></div>
-                                    </div>
-                                    <a href="javascript:;">今日私享</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="recommend-list songs-list">
-                        <div class="title">
-                            <h2>推荐歌单</h2>
-                            <a href="javascript:;">更多 <span>></span></a>
-                        </div>
-                        <div class="recommend-list-blocks songs-list-blocks">
-                            <ul>
-                                <li class="recommend-list-block songs-list-block">
-                                    <div><i class="iconfont icon-zanting11"></i>
-                                        <div></div>
-                                    </div>
-                                    <a href="javascript:;">你给的感动，我留了一生去问驱蚊器请问</a>
-                                </li>
-                                <li class="recommend-list-block songs-list-block">
-                                    <div><i class="iconfont icon-zanting11"></i>
-                                        <div></div>
-                                    </div>
-                                    <a href="javascript:;">你给的感动，我留了一生去问驱蚊器请问</a>
-                                </li>
-                                <li class="recommend-list-block songs-list-block">
-                                    <div><i class="iconfont icon-zanting11"></i>
-                                        <div></div>
-                                    </div>
-                                    <a href="javascript:;">你给的感动，我留了一生去问驱蚊器请问</a>
-                                </li>
-                                <li class="recommend-list-block songs-list-block">
-                                    <div><i class="iconfont icon-zanting11"></i>
-                                        <div></div>
-                                    </div>
-                                    <a href="javascript:;">你给的感动，我留了一生去问驱蚊器请问</a>
-                                </li>
-                                <li class="recommend-list-block songs-list-block">
-                                    <div><i class="iconfont icon-zanting11"></i>
-                                        <div></div>
-                                    </div>
-                                    <a href="javascript:;">你给的感动，我留了一生去问驱蚊器请问</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="cur-content-scrollarea scrollbararea">
-                    <div class="cur-content-scrollbar scrollbar"></div>
-                </div>
+            </div>
+            <div class="video">
+                <h1>视频</h1>
+                <img src="./img/bg12.jpg" alt="no picture" style="margin-left: 40px;">
+            </div>
+            <div class="radio-station">
+                <h1>电台</h1>
+                <img src="./img/bg10.jpg" alt="no picture" style="margin-left: 40px;">
+            </div>
+            <div class="my-like">
+                <h1>我喜欢</h1>
+                <img src="./img/bg5.jpg" alt="no picture" style="margin-left: 40px;">
+            </div>
+            <div class="local-and-download">
+                <h1>本地和下载</h1>
+                <img src="./img/bg4.jpg" alt="no picture" style="margin-left: 40px;">
+            </div>
+            <div class="play-history">
+                <h1>播放历史</h1>
+                <img src="./img/bg16.jpg" alt="no picture" style="margin-left: 40px; width: 90%;">
+            </div>
+            <div class="audition-list">
+                <h1>试听列表</h1>
+                <img src="./img/bg14.jpg" alt="no picture" style="margin-left: 40px;">
             </div>
         </article>
 

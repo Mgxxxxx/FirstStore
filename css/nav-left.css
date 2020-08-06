@@ -23,16 +23,15 @@
 
 .scroll-bar-area {
     position: absolute;
+    height: calc(100% - 90px);
     right: 2px;
-    top: 0;
+    top: 90px;
 }
 
 .scroll-bar {
     position: absolute;
-    height: calc(100% - 100px);
-    /* right: 2px; */
-    top: 90px;
     display: none;
+    top: 0;
     transition: height .5s;
 }
 

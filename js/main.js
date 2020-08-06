@@ -2,7 +2,7 @@ import { navLeftFn } from './nav-left.js';
 import { menuTopFn } from './meun-top.js';
 import { playingMessFn } from './playing-mess.js';
 import { floatRightFn } from './float-right.js';
-import { contentBodyFn } from './content-body.js';
+import { contentBodyFn } from './content-music-hall.js';
 
 
 let musicList = new Map();
